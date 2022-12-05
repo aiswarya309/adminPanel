@@ -1,0 +1,23 @@
+.container_lgn{
+    padding: 50px;
+    background-color: #336699;
+    width: 207px;
+    justify-content: center;
+    position: absolute;
+    top: 150px;
+    right: 40%;
+}
+.btnLogin_lgn{
+    /* background-color: rgba(77, 58, 83, 0.048);
+    padding: 50px; */
+    background-color: #ffffff;
+    padding: 5px;
+    margin: 9px;
+    border: 2px solid #bec5cc;
+    border-radius: 8px;
+    width: 70px;
+} 
+.txt{
+    border: 2px solid #bec5cc;
+    border-radius: 5px;
+}
