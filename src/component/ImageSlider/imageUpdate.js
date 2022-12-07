@@ -89,7 +89,7 @@ export default function ImageUpdate({image}) {
           Update image
         </BootstrapDialogTitle>
         <div>
-        <img src={url+image.image} style={{width:'200px',height:'200px',borderRadius:'50%', backgroundColor:'grey'}}/>
+        {/* <img src={url+image.image} style={{width:'200px',height:'200px',borderRadius:'50%', backgroundColor:'grey'}}/> */}
         </div>
         <form>
 
