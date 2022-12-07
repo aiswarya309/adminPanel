@@ -11,31 +11,25 @@ import ImageUpload from './component/imageUpload/imageUpload'
 import ImageSlider from './component/ImageSlider/imageSlider';
 // import AboutPopUp from './component/About/aboutPopUp'
 import EditAbout from './component/About/aboutEdit'
+import ContactList from './component/contactList/contact'
+import {ToastContainer ,toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'  ;
+
 function App() {
   return (
     <Provider store={store}>
     <Router>
     <div className="App">
-      {/* <Login /> */}
-    {/* <Route component={ResponsiveDrawer}  path='/about' exact/> */}
-    {/* <ResponsiveDrawer/> */}
+      {/* <ToastContainer/> */}
       <Switch>
         <Route exact  path='/login'>
           <Login/>
           </Route>
-          {/* <Route component={ResponsiveDrawer} exact path="/" />
-          <Route  component={ImageSlider} path='/imageSlider' exact/>  */}
-         {/* <PrivateRoute component={ResponsiveDrawer}  path='/' exact/> */}
           <PrivateRoute component={About} path='/about' exact></PrivateRoute>
           <PrivateRoute  component={ImageSlider} path='/imageSlider' exact/>
-          {/* <Route component={ImageUpload}  path='/imageUpload' exact/>
-          <Route component={EditAbout}  path='/aboutEdit' exact/> */}
-
-          {/* <Route component={AboutPopUp}  path='/aboutPopup' exact/> */}
-          {/* <Route component={Images}  path='/Images' exact/> */}
-        {/* <PrivateRoute component={ResponsiveDrawer}  path='/' exact/> */}
-        {/* <PrivateRoute element={<ResponsiveDrawer/>} path='/ad' exact/> */}
-        {/* <PrivateRoute component={DataTable}  path='/about' exact/> */}
+          <PrivateRoute component={ContactList} path='/contact' exact></PrivateRoute>
+          <Route component={ImageUpload}  path='/imageUpload' exact/>ContactList
+          <Route component={EditAbout}  path='/aboutEdit' exact/>
       </Switch>
     </div>
     </Router>

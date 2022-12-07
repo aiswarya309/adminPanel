@@ -1,4 +1,6 @@
 import * as React from 'react';
+import './slider.css'
+
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -48,7 +50,7 @@ export default function ImageSlider() {
     dispatch(imageGet())
   },[])
   return (
-    <div>
+    <div className='mainSlider'>
       <Button variant="outlined" onClick={btnClick}>Add</Button>
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
