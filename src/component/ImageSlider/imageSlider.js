@@ -70,7 +70,7 @@ export default function ImageSlider() {
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell component="th" scope="row">
-                {row.id}
+                {index}
               </TableCell>
               {/* <TableCell align="right">{row.title}</TableCell> */}
               {/* {{let image= url+row.image}} */}
