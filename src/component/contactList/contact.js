@@ -20,10 +20,13 @@ import  aboutDel  from '../../Redux/Description/aboutDelete'
 import { DeleteForever } from '@mui/icons-material';
 import ContactGet from '../../Redux/Contact/contactGet'
 import contactDel from '../../Redux/Contact/contactDel'
+import ContactView from './contactView'
 
 export default function ContactList() {
   const dispatch=useDispatch()
   const history=useHistory()
+  const url="http://localhost:5000/slider/"
+
   // const navigate=useNavigate()
   const rows=useSelector((State)=>{
     return State.ContactReducer.contact
@@ -55,7 +58,9 @@ export default function ContactList() {
             <TableCell align="right">Email</TableCell>
             <TableCell align="right">Phno</TableCell>
             <TableCell align="right">Place</TableCell>
-            {/* <TableCell align="right">action</TableCell> */}
+            <TableCell align="right">Resume</TableCell>
+            <TableCell align="right">View</TableCell>
+
             {/* <TableCell align="right">Protein&nbsp;(g)</TableCell> */}
           </TableRow>
         </TableHead>
@@ -74,6 +79,10 @@ export default function ContactList() {
               <TableCell align="right">{row.phn}</TableCell>
               <TableCell align="right">{row.place}</TableCell>
               <TableCell align="right">{row.Resume}</TableCell>
+              <TableCell align="right">
+                <ContactView contact={row}/>
+              </TableCell>
+
 
                {/* <TableCell align="right" sx={{display:'flex'}}><EditIcon/><DeleteIcon/></TableCell> */}
               {/* <TableCell align="right" sx={{display:'flex'}}>

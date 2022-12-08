@@ -12,29 +12,31 @@ import ImageSlider from './component/ImageSlider/imageSlider';
 // import AboutPopUp from './component/About/aboutPopUp'
 import EditAbout from './component/About/aboutEdit'
 import ContactList from './component/contactList/contact'
-import {ToastContainer ,toast} from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css'  ;
+// import {ToastContainer ,toast} from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css'  ;
 
 function App() {
+  console.log("ADMIN PANEL")
   return (
     <Provider store={store}>
-    <Router>
-    <div className="App">
-      {/* <ToastContainer/> */}
-      <Switch>
-        <Route exact  path='/login'>
-          <Login/>
-          </Route>
-          <PrivateRoute component={About} path='/about' exact></PrivateRoute>
-          <PrivateRoute  component={ImageSlider} path='/imageSlider' exact/>
-          <PrivateRoute component={ContactList} path='/contact' exact></PrivateRoute>
-          <Route component={ImageUpload}  path='/imageUpload' exact/>ContactList
-          <Route component={EditAbout}  path='/aboutEdit' exact/>
-      </Switch>
-    </div>
-    </Router>
+      <Router>
+        {/* <h1>Admin</h1> */}
+        <div className="App">
+          <Switch>
+            {console.log("App.js  Switch")}
+            <Route exact  path='/login'>
+              <Login/>
+            </Route>
+            <PrivateRoute component={About} path='/about' exact />
+            <PrivateRoute  component={ImageSlider} path='/imageSlider' exact/>
+            <PrivateRoute component={ContactList} path='/contact' exact />
+            <Route component={ImageUpload}  path='/imageUpload' exact/>
+            <Route component={EditAbout}  path='/aboutEdit' exact/>
+          </Switch>
+        </div>
+      </Router>
     </Provider>
-  );
+  )
 }
 
 export default App;
