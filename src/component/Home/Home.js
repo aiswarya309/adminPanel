@@ -26,9 +26,8 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import DataTable from '../About/about'
-import { Link } from 'react-router-dom';
 import ImageSlider from '../ImageSlider/imageSlider';
-import { Route } from 'react-router-dom';
+import { Route,useHistory ,Link} from 'react-router-dom';
 
 const drawerWidth = 240;
 
@@ -67,6 +66,7 @@ const useStyles = makeStyles((theme) => ({
 
 function ResponsiveDrawer(props) {
   console.log("ResponsiveDrawer")
+  const history=useHistory()
   const { window } = props;
   const classes = useStyles();
   const theme = useTheme();
@@ -82,17 +82,17 @@ function ResponsiveDrawer(props) {
       <Divider />
       <List>
         {['about', 'imageSlider', 'contact'].map((text, index) => (
-          <Link to={'/'+text}>
-          <ListItem button key={text}>
+          // <Link to={'/'+text}>
+          <ListItem button key={text} onClick={()=>{history.push('/'+text)}}>
             <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
             <ListItemText primary={text} />
           </ListItem>
-          </Link>
+          // </Link>
         ))}
       </List>
      
       <Divider />
-      // {/* <List>
+       {/* <List>
       //   {['All mail', 'Trash', 'Spam'].map((text, index) => (
       //     <ListItem button key={text}>
       //       <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>

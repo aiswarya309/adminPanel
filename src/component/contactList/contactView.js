@@ -104,13 +104,15 @@ export default function ContactView({contact}) {
         <form>
 
         <DialogContent dividers style={{heigt:'600px' , width:'500px' , display:'flex', alignItems:'center',justifyContent:'center'}}>
-         <Box>
-           <span style={{display:'flex'}}>
-            <label>Name</label> <input type='text' onChange={handleChange} value={name}/>
-          <label>Email</label> <input type='text' onChange={handleChange} value={email}/>
-            </span>
-          <label>Phn</label> <input type='text' onChange={handleChange} value={Phn}/>
-          <label>Place</label> <input type='text' onChange={handleChange} value={place}/>
+         <Box >
+            <label>Name</label><br/>
+             <input type='text' onChange={handleChange} value={name}/><br/>
+          <label>Email</label> <br/>
+          <input type='text' onChange={handleChange} value={email}/><br/>
+          <label>Phn</label> <br/>
+          <input type='text' onChange={handleChange} value={Phn}/><br/>
+          <label>Place</label> <br/>
+          <input type='text' onChange={handleChange} value={place}/><br/><br/>
           {/* <button onClick={()=>resumeClick(contact.Resume)}>Resume</button> */}
           <a href={`http://localhost:5000/slider/${contact.Resume}`} target="_blank">{contact.Resume}</a>
 

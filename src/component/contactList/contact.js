@@ -37,20 +37,20 @@ export default function ContactList() {
 //     // history.push('/aboutEdit',{state:edit})
 //     history.push({pathname:'/aboutEdit',state:{edit:edit}})
 //   }
-  const btnDelete=(del)=>{
-    // console.log("id frm edit icon",del)
-    dispatch(contactDel(del))
-  }
+  // const btnDelete=(del)=>{
+  //   // console.log("id frm edit icon",del)
+  //   dispatch(contactDel(del))
+  // }
   useEffect(()=>{
     // console.log("useEffect In");
     dispatch(ContactGet())
   },[])
   return (
     <div className='mainContact'>
-      <AboutPopUp/>
+      {/* <AboutPopUp/> */}
       {/* <Button variant="outlined">Add</Button> */}
     <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
+      <Table sx={{ maxWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
             <TableCell>Id</TableCell>
@@ -67,12 +67,12 @@ export default function ContactList() {
         <TableBody>
           {rows && rows.map((row,index) => (
             <TableRow
-            key={index}
+            key={row.id}
             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell component="th" scope="row">
               {console.log("ROW",rows)}
-                {row.id}
+                {index + 1}
               </TableCell>
               <TableCell align="right">{row.first_name}</TableCell>
               <TableCell align="right">{row.email}</TableCell>
