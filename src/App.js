@@ -24,7 +24,7 @@ function App() {
         <div className="App">
           <Switch>
             {console.log("App.js  Switch")}
-            <Route exact  path='/login'>
+            <Route exact  path='/'>
               <Login/>
             </Route>
             <PrivateRoute component={About} path='/about' exact />

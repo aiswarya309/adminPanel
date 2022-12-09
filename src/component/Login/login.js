@@ -37,7 +37,7 @@ function Login(){
             // // navigate("/")
             //  <Redirect to="/" />
         }else{
-            history.push('/login')
+            history.push('/')
         }
     }
     const logintextname=(val)=>{

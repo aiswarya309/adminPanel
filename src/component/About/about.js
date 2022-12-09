@@ -59,7 +59,7 @@ export default function About() {
       <AboutPopUp/>
       {/* <Button variant="outlined">Add</Button> */}
     <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
+      <Table sx={{ maxWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
             <TableCell>Id</TableCell>
@@ -76,7 +76,7 @@ export default function About() {
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell component="th" scope="row">
-                {row.id}
+                {index+1}
               </TableCell>
               <TableCell align="right">{row.title}</TableCell>
               <TableCell align="right">{row.content}</TableCell>

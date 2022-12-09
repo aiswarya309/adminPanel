@@ -66,11 +66,11 @@ export default function ImageSlider() {
         <TableBody>
           {rows && rows.map((row,index) => (
             <TableRow
-              key={index}
+              key={row.id}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell component="th" scope="row">
-                {index}
+                {index + 1}
               </TableCell>
               {/* <TableCell align="right">{row.title}</TableCell> */}
               {/* {{let image= url+row.image}} */}
