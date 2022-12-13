@@ -1,26 +1,14 @@
 import { useState,useEffect } from "react";
 import './login.css'
 import { useHistory ,Link  ,Redirect } from "react-router-dom";
-import { useDispatch} from 'react-redux';
+import { useDispatch,useSelector} from 'react-redux';
 import { authData } from "../../Redux/Login/loginAction";
-// import ResponsiveDrawer from "../Home/Home"; 
-// import {BrowserRouter as Router ,Route , Switch} from 'react-router-dom';
 
-
-// import ResponsiveDrawer from '../Home/Home';
-// // import PrivateRoute from '../PrivateRoute/privateRoute';
-// import {BrowserRouter as Router ,Route , Switch} from 'react-router-dom';
-// import About from '../About/'
-// // import { Provider } from 'react-redux';
-// // import store from './Redux/store'
-// import ImageUpload from '../imageUpload/imageUpload'
-// import ImageSlider from './component/ImageSlider/imageSlider';
-// // import AboutPopUp from './component/About/aboutPopUp'
-// import EditAbout from './component/About/aboutEdit'
 function Login(){
     let history = useHistory()
     const dispatch=useDispatch()
-    // const navigate = useNavigate();
+    // const auth= useSelector((State)=>{
+    //     return State.LoginReducer.Authenticate})   
     const [loginData, setLoginData] = useState({
         txtName:'',
         password:''
@@ -31,11 +19,10 @@ function Login(){
         if((txtName === 'admin') && (password === 'admin')){
             dispatch(authData())
             history.push('/about')
+            // console.log("Auth in login",auth)
             localStorage.setItem("adminValue","true")
             console.log("Login success");
-            // <ResponsiveDrawer/>
-            // // navigate("/")
-            //  <Redirect to="/" />
+          
         }else{
             history.push('/')
         }

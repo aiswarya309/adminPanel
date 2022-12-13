@@ -8,15 +8,15 @@ import ResponsiveDrawer from '../Home/Home';
 
 const PrivateRoute =({component: Component,...rest }) =>{
     console.log("PrivateRoute")
-    const Authenticate = useSelector((State)=>{
+    const Auth = useSelector((State)=>{
         return State.LoginReducer.Authenticate})
-    // const Authenticate=localStorage.getItem("adminValue")
+    const Authenticate=localStorage.getItem("adminValue",Auth)
     console.log("Authenticate",Authenticate,"rest",rest)
     return(
         <div>
             <Route {...rest} render ={(props) =>{
                 // return auth ? (<Component {...props}/>):(<Redirect to='/login' />)
-                {console.log("localStorage.getItem",localStorage.getItem("adminValue"))}
+                // {console.log("localStorage.getItem",localStorage.getItem("adminValue"))}
                 if(Authenticate) return (<>
                     <ResponsiveDrawer/>
                     <Component {...props} />
