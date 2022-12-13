@@ -12,6 +12,7 @@ import ImageSlider from './component/ImageSlider/imageSlider';
 // import AboutPopUp from './component/About/aboutPopUp'
 import EditAbout from './component/About/aboutEdit'
 import ContactList from './component/contactList/contact'
+import Employee from './component/Employee/employee'
 // import {ToastContainer ,toast} from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css'  ;
 
@@ -30,6 +31,7 @@ function App() {
             <PrivateRoute component={About} path='/about' exact />
             <PrivateRoute  component={ImageSlider} path='/imageSlider' exact/>
             <PrivateRoute component={ContactList} path='/contact' exact />
+            <PrivateRoute component={Employee} path='/Employee'/>
             <Route component={ImageUpload}  path='/imageUpload' exact/>
             <Route component={EditAbout}  path='/aboutEdit' exact/>
           </Switch>

@@ -53,7 +53,7 @@ BootstrapDialogTitle.propTypes = {
 };
 
 export default function ContactView({contact}) {
-    console.log("Contact details",contact)
+    // console.log("Contact details",contact)
   const [open, setOpen] = React.useState(false);
   const [file,setFile]=React.useState()
   const [name,setName]=React.useState(contact.first_name)
