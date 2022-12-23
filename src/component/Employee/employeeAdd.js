@@ -13,9 +13,10 @@ import EditIcon from '@mui/icons-material/Edit';
 import { Box } from '@material-ui/core';
 import TextField from '@mui/material/TextField';
 import { useDispatch } from 'react-redux';
-import UpdateImage from '../../Redux/ImageUpload/ImageUpdate'
 import empUpdate from '../../Redux/Employee/employeeUpdate'
 import {useHistory} from 'react-router-dom'
+import EmployeePost from '../../Redux/Employee/employeeAdd'
+import { toast } from 'react-toastify';
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
     padding: theme.spacing(2),
@@ -54,15 +55,15 @@ BootstrapDialogTitle.propTypes = {
   onClose: PropTypes.func.isRequired,
 };
 
-export default function EmployeeEdit({emp}) {
-  // const history=useHistory();
+export default function EmployeeAdd() {
+  const history=useHistory();
     // console.log("emp prop",emp)
   const [open, setOpen] = React.useState(false);
-  const [name,setName]=React.useState(emp.first_name)
-  const [email, setEmail] = React.useState(emp.email);
-  const [country,setCountry]=React.useState(emp.country)
-  const [jobTitle, setjobTitle] = React.useState(emp.job_title);
-  const [pincode, setPincode] = React.useState(emp.pincode);
+  const [name,setName]=React.useState('')
+  const [email, setEmail] = React.useState('');
+  const [country,setCountry]=React.useState('')
+  const [jobTitle, setjobTitle] = React.useState('');
+  const [pincode, setPincode] = React.useState('');
 
 //   const url="http://localhost:5000/slider/"
   const dispatch=useDispatch()
@@ -84,18 +85,21 @@ export default function EmployeeEdit({emp}) {
 
   const handleClick=(e)=>{
     e.preventDefault();
-    dispatch(empUpdate({name:name,email:email,country:country,jobTitle:jobTitle,pincode:pincode,id:emp.id}))
-    // setName('')
-    // setEmail('')
-    // setCountry('')
-    // setjobTitle('')
-    // setPincode('')
+    toast("Details saved")
+    dispatch(EmployeePost({name:name,email:email,country:country,jobTitle:jobTitle,pincode:pincode}))
+    history.push('/Employee')
+    setName('')
+    setEmail('')
+    setCountry('')
+    setjobTitle('')
+    setPincode('')
+    // dispatch(UpdateImage(emp.id))
   }
 
   return (
     <div>
         <IconButton onClick={handleClickOpen}>
-            <EditIcon />
+            Add
         </IconButton>
       {/* <Button variant="outlined" >
         Open dialog
@@ -106,7 +110,7 @@ export default function EmployeeEdit({emp}) {
         open={open}
       >
         <BootstrapDialogTitle id="customized-dialog-title" onClose={handleClose}>
-         Edit Employee Details
+         Add Employee Details
         </BootstrapDialogTitle>
         <div>
         {/* <img src={url+image.image} style={{width:'200px',height:'200px',borderRadius:'50%', backgroundColor:'grey'}}/> */}

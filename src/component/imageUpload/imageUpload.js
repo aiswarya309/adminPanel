@@ -46,7 +46,7 @@ export default function ImageUpload() {
           value={value}
           onChange={handleChange}
         /> */}
-        <input  multiple type="file"  onChange={handleChange} name="img"/>
+        <input  multiple type="file"  onChange={handleChange} name="image"/>
       </div>
      
       <div>
