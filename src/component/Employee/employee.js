@@ -14,15 +14,15 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { IconButton } from '@material-ui/core';
 import {Button} from '@material-ui/core';
-// import AboutPopUp from '../About/aboutPopUp'
 import { useLocation ,useHistory} from "react-router-dom";
-// import  aboutDel  from '../../Redux/Description/aboutDelete'
 import { DeleteForever } from '@mui/icons-material';
 import employeeGet from '../../Redux/Employee/employeeGet'
-// import contactDel from '../../Redux/Contact/contactDel'
-// import ContactView from '../contactList/contactView'
 import EmployeeEdit from './employeeEdit'
 import empDelete from '../../Redux/Employee/employeeDelete'
+import EmployeeAdd from './employeeAdd'
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'  ;
+
 
 export default function Employee() {
   const dispatch=useDispatch()
@@ -35,11 +35,11 @@ export default function Employee() {
   })
   console.log("state from emp componet",rows);
 
-  const btnEdit=(edit)=>{
-    // console.log("id frm edit icon",edit)
-    // history.push('/aboutEdit',{state:edit})
-    history.push({pathname:'/aboutEdit',state:{edit:edit}})
-  }
+  // const btnEdit=(edit)=>{
+  //   // console.log("id frm edit icon",edit)
+  //   // history.push('/aboutEdit',{state:edit})
+  //   history.push({pathname:'/aboutEdit',state:{edit:edit}})
+  // }
   const btnDelete=(del)=>{
     // console.log("id frm edit icon",del)
     dispatch(empDelete(del))
@@ -50,10 +50,9 @@ export default function Employee() {
   },[])
   return (
     <div className='mainContact'>
-      {/* <AboutPopUp/> */}
-      {/* <Button variant="outlined">Add</Button> */}
+     <EmployeeAdd/>
     <TableContainer component={Paper}>
-      <Table sx={{ maxWidth: 650 }} aria-label="simple table">
+      <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
             <TableCell>Id</TableCell>
